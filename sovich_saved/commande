@@ -1,0 +1,10 @@
+
+exec_cmd "top -n 1 -b"
+#exec_cmd "awk '/^intr/{print \$1,\$2;next}{print}' /proc/stat"
+exec_cmd "df -lPk -x smbfs -x tmpfs"
+exec_cmd "cat /proc/vmstat"
+exec_cmd "mpstat -P ALL $INTER 1"
+exec_cmd "cat /proc/meminfo"
+exec_cmd "ipcs -a"
+exec_cmd "sar $INTER 1"
+exec_cmd "iostat -d"
